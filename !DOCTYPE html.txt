@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ni uno menos, tu vida importa</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff8dc;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      background-color: #fffbe6;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #e0ac00;
+    }
+
+    .ribbon {
+      text-align: center;
+      margin: 10px 0;
+    }
+
+    .ribbon img {
+      width: 80px;
+    }
+
+    p {
+      text-align: center;
+      font-size: 18px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 150px;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      resize: vertical;
+      font-size: 16px;
+      background-color: #fffaf0;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #fcd34d;
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      margin-top: 10px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .thank-you {
+      display: none;
+      text-align: center;
+      color: green;
+      margin-top: 20px;
+      font-size: 18px;
+    }
+
+    .respuesta {
+      margin-top: 30px;
+      background-color: #fff3b0;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    .qr-section {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .qr-section img {
+      width: 150px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Ni uno menos, tu vida importa</h1>
+    <div class="ribbon">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Yellow_Ribbon.svg/512px-Yellow_Ribbon.svg.png" alt="Lazo amarillo">
+    </div>
+    <p>Este es un espacio seguro. Puedes escribir lo que sientes de manera anónima. Estamos aquí para ti.</p>
+
+    <form id="formulario">
+      <textarea placeholder="¿Cómo te sientes hoy?" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+
+    <div class="thank-you" id="mensajeGracias">
+      Gracias por compartir. No estás solo/a. Te leemos con cariño.
+    </div>
+
+    <!-- Zona simulada de respuesta -->
+    <div class="respuesta" id="respuestaAuto" style="display: none;">
+      <strong>Respuesta del equipo:</strong><br>
+      Gracias por tu mensaje. Queremos que sepas que lo que sientes es válido. Si necesitas apoyo, estamos aquí.
+    </div>
+
+    <!-- Código QR -->
+    <div class="qr-section">
+      <p>Escanea este código QR para acceder desde tu celular:</p>
+      <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://tupaginaweb.com/niunomenos&size=150x150" alt="QR a la página">
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('formulario').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('formulario').style.display = 'none';
+      document.getElementById('mensajeGracias').style.display = 'block';
+      document.getElementById('respuestaAuto').style.display = 'block';
+    });
+  </script>
+</body>
+</html>
